@@ -2,90 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ZYNX Central 🤫🧏☠💀</title>
+  <title>ZYNX Central Login</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f9f9f9;
       margin: 0;
-      padding: 40px;
+      padding: 100px;
     }
-    #login {
-      margin-top: 150px;
+    #login { 
+      display: inline-block; 
+      padding: 40px; 
+      border: 2px solid #333; 
+      border-radius: 12px; 
+      background-color: #fff;
     }
-    input { padding: 8px; margin: 5px; }
-    button { padding: 8px 12px; cursor: pointer; }
-    .game-icon {
-      display: inline-block;
-      cursor: pointer;
-      margin: 20px;
-      border: 2px solid #333;
-      border-radius: 12px;
-      padding: 10px;
-      width: 220px;
-      transition: transform 0.2s, box-shadow 0.2s;
+    input { 
+      padding: 14px; 
+      font-size: 20px; 
+      width: 280px; 
+      margin: 10px 0; 
+      border-radius: 8px; 
+      border: 1px solid #333;
     }
-    .game-icon:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    button { 
+      padding: 14px 20px; 
+      font-size: 20px;
+      cursor: pointer; 
+      border-radius: 8px; 
+      border: 1px solid #333;
+      background-color: #4CAF50; 
+      color: white;
     }
-    .game-icon img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .game-name {
-      margin-top: 10px;
+    #welcome {
+      font-size: 28px;
       font-weight: bold;
-      font-size: 1.2em;
+      margin-bottom: 30px;
       color: #333;
+    }
+    #error {
+      color: red;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-<!-- Password screen -->
 <div id="login">
-  <h2>Enter Password</h2>
-  <input type="password" id="password" placeholder="Password">
+  <div id="welcome">Welcome to ZYNX Central</div>
+  <input type="password" id="password" placeholder="Enter Password">
+  <br>
   <button onclick="checkPassword()">Enter</button>
-  <p id="error" style="color:red;"></p>
+  <div id="error"></div>
 </div>
 
 <script>
   function checkPassword() {
     const input = document.getElementById("password").value;
-    const correctPassword = "Mustard?"; // <-- your password
+    const correctPassword = "Mustard?";
     if (input === correctPassword) {
-      // Replace the page with the main site
-      document.body.innerHTML = `
-        <h1>ZYNX Central 🤫🧏☠💀</h1>
-
-        <div class="game-icon" onclick="location.href='driftboss.html'">
-          <img src="https://game-cdn.b3.fun/cdn-cgi/image/format=auto/drift-boss-538fa894-019a-4bb6-ba61-2c343374e3ea/portrait-c85or9.png" alt="Drift Boss">
-          <div class="game-name">Drift Boss</div>
-        </div>
-
-        <div class="game-icon" onclick="location.href='serious.html'">
-          <img src="https://cdn.blipzi.com/go/lf/golf-orbit-d.jpg?width=200&height=200&aspect_ratio=1:1" alt="Serious">
-          <div class="game-name">Serious</div>
-        </div>
-
-        <div class="game-icon" onclick="location.href='sab.html'">
-          <img src="https://tr.rbxcdn.com/180DAY-a5434f50e5846e446aab631fbf0a92e7/768/432/Image/Webp/noFilter" alt="Sab">
-          <div class="game-name">Sab</div>
-        </div>
-
-        <div class="game-icon" onclick="location.href='sab.html'">
-          <img src="https://play-lh.googleusercontent.com/iR1JNfTr0W_fDN8zAfuZYPYHdVjI1UzNSVFkbAyXwN8e3jEuKsyu73zqjVdHDxNEfQqLhC78EaPzZPtWNL-X" alt="Steal a Brainrot">
-          <div class="game-name">Steal a Brainrot</div>
-        </div>
-      `;
+      window.location.href = "home.html"; // redirect to your main page
     } else {
       document.getElementById("error").innerText = "Wrong password, try again.";
     }
   }
+
+  // Allow Enter key to trigger the password check
+  document.getElementById("password").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      checkPassword();
+    }
+  });
 </script>
 
 </body>
 </html>
+
