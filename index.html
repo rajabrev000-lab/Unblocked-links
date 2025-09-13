@@ -1,81 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ZYNX Central Login</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 100px;
-    }
-    #login { 
-      display: inline-block; 
-      padding: 40px; 
-      border: 2px solid #333; 
-      border-radius: 12px; 
-      background-color: #fff;
-    }
-    input { 
-      padding: 14px; 
-      font-size: 20px; 
-      width: 280px; 
-      margin: 10px 0; 
-      border-radius: 8px; 
-      border: 1px solid #333;
-    }
-    button { 
-      padding: 14px 20px; 
-      font-size: 20px;
-      cursor: pointer; 
-      border-radius: 8px; 
-      border: 1px solid #333;
-      background-color: #4CAF50; 
-      color: white;
-    }
-    #welcome {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 30px;
-      color: #333;
-    }
-    #error {
-      color: red;
-      margin-top: 15px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZYNX Central</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+  a {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 200px;
+    background-color: #00aaff;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  a:hover {
+    background-color: #ffcc00;
+    color: black;
+  }
+</style>
 </head>
 <body>
 
-<div id="login">
-  <div id="welcome">Welcome to ZYNX Central</div>
-  <input type="password" id="password" placeholder="Enter Password">
-  <br>
-  <button onclick="checkPassword()">Enter</button>
-  <div id="error"></div>
-</div>
+<h1>Welcome to ZYNX Central</h1>
 
-<script>
-  function checkPassword() {
-    const input = document.getElementById("password").value;
-    const correctPassword = "Mustard?";
-    if (input === correctPassword) {
-      window.location.href = "home.html"; // redirect to your main page
-    } else {
-      document.getElementById("error").innerText = "Wrong password, try again.";
-    }
-  }
-
-  // Allow Enter key to trigger the password check
-  document.getElementById("password").addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-      checkPassword();
-    }
-  });
-</script>
+<a href="driftboss.html">DriftBoss</a>
+<a href="Serious.html">Serious</a>
+<a href="Sab.html">Sab</a>
 
 </body>
 </html>
-
