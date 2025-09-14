@@ -1,78 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Page</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zynx Central</title>
+  <link rel="icon" href="favicon.jpg">
   <style>
     body {
-      background: #fff;
+      background-color: white;
+      margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0;
+    }
+    h1 {
+      color: black;
+      margin-top: 20px;
+    }
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
       padding: 20px;
     }
     .game-card {
-      display: inline-block;
-      margin: 15px;
-      border: 2px solid #333;
-      border-radius: 15px;
+      width: 150px;
+      border: 2px solid #000;
+      border-radius: 10px;
       overflow: hidden;
-      width: 200px;
-      box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
-      cursor: pointer;
+      text-align: center;
+      background-color: #f0f0f0;
+      transition: transform 0.2s;
+    }
+    .game-card:hover {
+      transform: scale(1.05);
     }
     .game-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
+      height: auto;
     }
-    .game-card-title {
-      background: #000;
-      color: #fff;
-      padding: 10px;
+    .game-card p {
+      margin: 5px 0;
       font-weight: bold;
+    }
+    #passwordPage {
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+    }
+    #passwordPage input {
+      padding: 10px;
       font-size: 16px;
+      margin-bottom: 10px;
+    }
+    #passwordPage button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor:pointer;
     }
   </style>
-  <script>
-    // Password protection
-    window.onload = function() {
-      if(sessionStorage.getItem('authenticated') !== 'true') {
-        window.location.href = "password.html"; // redirect if not authenticated
-      }
-    }
-    function openGame(url) {
-      window.location.href = url;
-    }
-  </script>
 </head>
 <body>
-  <h1>Welcome to the Game Stash</h1>
 
-  <!-- FNAF game card -->
-  <div class="game-card" onclick="openGame('freddy.html')">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgH..." alt="Five Nights At Freddy's">
-    <div class="game-card-title">Five Nights At Freddy's</div>
+  <!-- PASSWORD PAGE -->
+  <div id="passwordPage">
+    <h2>Enter Password to Continue</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button onclick="checkPassword()">Enter</button>
+    <p id="passwordMessage" style="color:red;"></p>
   </div>
 
-  <!-- Superhot -->
-  <div class="game-card" onclick="openGame('superhot.html')">
-    <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Superhot">
-    <div class="game-card-title">Superhot</div>
+  <!-- MAIN CONTENT -->
+  <h1>Zynx Central</h1>
+  <div class="game-grid">
+    <!-- Superhot -->
+    <div class="game-card">
+      <a href="Superhot.html">
+        <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Superhot">
+        <p>Superhot</p>
+      </a>
+    </div>
+
+    <!-- Retro Bowl -->
+    <div class="game-card">
+      <a href="retro.html">
+        <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl">
+        <p>Retro Bowl</p>
+      </a>
+    </div>
+
+    <!-- Real Flight Sim -->
+    <div class="game-card">
+      <a href="aeroplane.html">
+        <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Sim">
+        <p>Real Flight Sim</p>
+      </a>
+    </div>
+
+    <!-- Five Nights at Freddy's -->
+    <div class="game-card">
+      <a href="freddy.html">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...YOUR_IMAGE_BASE64_HERE..." alt="FNaF">
+        <p>Five Nights At Freddys</p>
+      </a>
+    </div>
   </div>
 
-  <!-- Retro Bowl -->
-  <div class="game-card" onclick="openGame('retro.html')">
-    <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl">
-    <div class="game-card-title">Retro Bowl</div>
-  </div>
+  <script>
+    const password = "Mustard?";
 
-  <!-- Real Flight Sim -->
-  <div class="game-card" onclick="openGame('aeroplane.html')">
-    <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Sim">
-    <div class="game-card-title">Real Flight Sim</div>
-  </div>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if(input === password) {
+        document.getElementById("passwordPage").style.display = "none";
+      } else {
+        document.getElementById("passwordMessage").innerText = "Incorrect password!";
+      }
+    }
+  </script>
+
 </body>
 </html>
