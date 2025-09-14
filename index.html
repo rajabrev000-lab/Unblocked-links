@@ -2,131 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zynx Central</title>
-  <link rel="icon" href="favicon.jpg">
+  <title>ZYNX Central🤫🧏☠💀</title>
   <style>
     body {
-      background-color: white;
-      margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
+      background-color: #f9f9f9;
+      padding: 0;
+      margin: 0;
     }
+
+    /* Navbar */
+    nav {
+      background-color: #333;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      margin: 0 15px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+
     h1 {
-      color: black;
-      margin-top: 20px;
+      margin-top: 30px;
     }
-    .game-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    /* Game Grid */
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 20px;
+      justify-items: center;
+      padding: 40px;
     }
-    .game-card {
-      width: 150px;
-      border: 2px solid #000;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      background-color: #f0f0f0;
-      transition: transform 0.2s;
-    }
-    .game-card:hover {
-      transform: scale(1.05);
-    }
-    .game-card img {
-      width: 100%;
-      height: auto;
-    }
-    .game-card p {
-      margin: 5px 0;
-      font-weight: bold;
-    }
-    #passwordPage {
-      position: fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:white;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      z-index:1000;
-    }
-    #passwordPage input {
+    .game-icon {
+      cursor: pointer;
+      border: 2px solid #333;
+      border-radius: 12px;
       padding: 10px;
-      font-size: 16px;
-      margin-bottom: 10px;
+      width: 220px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: white;
     }
-    #passwordPage button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor:pointer;
+    .game-icon:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .game-icon img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .game-name {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <!-- PASSWORD PAGE -->
-  <div id="passwordPage">
-    <h2>Enter Password to Continue</h2>
-    <input type="password" id="passwordInput" placeholder="Password">
-    <button onclick="checkPassword()">Enter</button>
-    <p id="passwordMessage" style="color:red;"></p>
-  </div>
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">🎮 Games</a>
+  </nav>
 
-  <!-- MAIN CONTENT -->
-  <h1>Zynx Central</h1>
-  <div class="game-grid">
+  <h1>ZYNX Central🤫🧏☠💀</h1>
+
+  <div class="game-container">
+    <!-- Drift Boss -->
+    <div class="game-icon" onclick="location.href='driftboss.html'">
+      <img src="https://game-cdn.b3.fun/cdn-cgi/image/format=auto/drift-boss-538fa894-019a-4bb6-ba61-2c343374e3ea/portrait-c85or9.png" alt="Drift Boss" />
+      <div class="game-name">Drift Boss</div>
+    </div>
+
+    <!-- Golf Orbit -->
+    <div class="game-icon" onclick="location.href='Serious.html'">
+      <img src="https://cdn.blipzi.com/go/lf/golf-orbit-d.jpg?width=200&height=200&aspect_ratio=1:1" alt="Golf Orbit" />
+      <div class="game-name">Golf Orbit (Work in Progress)</div>
+    </div>
+
+    <!-- Steal A Brainrot -->
+    <div class="game-icon" onclick="location.href='Sab.html'">
+      <img src="https://play-lh.googleusercontent.com/iR1JNfTr0W_fDN8zAfuZYPYHdVjI1UzNSVFkbAyXwN8e3jEuKsyu73zqjVdHDxNEfQqLhC78EaPzZPtWNL-X" alt="Steal A Brainrot Logo" />
+      <div class="game-name">Steal A Brainrot</div>
+    </div>
+
+    <!-- Five Nights At Freddys -->
+    <div class="game-icon" onclick="location.href='Freddy.html'">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiuy1FC9UsLNL9ZbxseYTTOnQlhjM6x2inlQ&s" alt="Five Nights At Freddys Logo" />
+      <div class="game-name">Five Nights At Freddys</div>
+    </div>
+
     <!-- Superhot -->
-    <div class="game-card">
-      <a href="Superhot.html">
-        <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Superhot">
-        <p>Superhot</p>
-      </a>
+    <div class="game-icon" onclick="location.href='superhot.html'">
+      <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Superhot Logo" />
+      <div class="game-name">Superhot</div>
     </div>
 
     <!-- Retro Bowl -->
-    <div class="game-card">
-      <a href="retro.html">
-        <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl">
-        <p>Retro Bowl</p>
-      </a>
+    <div class="game-icon" onclick="location.href='retro.html'">
+      <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl Logo" />
+      <div class="game-name">Retro Bowl</div>
     </div>
 
     <!-- Real Flight Sim -->
-    <div class="game-card">
-      <a href="aeroplane.html">
-        <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Sim">
-        <p>Real Flight Sim</p>
-      </a>
-    </div>
-
-    <!-- Five Nights at Freddy's -->
-    <div class="game-card">
-      <a href="freddy.html">
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...YOUR_IMAGE_BASE64_HERE..." alt="FNaF">
-        <p>Five Nights At Freddys</p>
-      </a>
+    <div class="game-icon" onclick="location.href='aeroplane.html'">
+      <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Sim Logo" />
+      <div class="game-name">Real Flight Sim</div>
     </div>
   </div>
-
-  <script>
-    const password = "Mustard?";
-
-    function checkPassword() {
-      const input = document.getElementById("passwordInput").value;
-      if(input === password) {
-        document.getElementById("passwordPage").style.display = "none";
-      } else {
-        document.getElementById("passwordMessage").innerText = "Incorrect password!";
-      }
-    }
-  </script>
 
 </body>
 </html>
