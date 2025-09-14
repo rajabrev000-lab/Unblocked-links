@@ -2,130 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ZYNX Central🤫🧏☠💀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Page</title>
   <style>
     body {
+      background: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #f9f9f9;
-      padding: 0;
       margin: 0;
+      padding: 20px;
     }
-
-    /* Navbar */
-    nav {
-      background-color: #333;
-      padding: 15px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-      margin: 0 15px;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    h1 {
-      margin-top: 30px;
-    }
-
-    /* Game Grid */
-    .game-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      justify-items: center;
-      padding: 40px;
-    }
-    .game-icon {
-      cursor: pointer;
+    .game-card {
+      display: inline-block;
+      margin: 15px;
       border: 2px solid #333;
-      border-radius: 12px;
-      padding: 10px;
-      width: 220px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 200px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
-    .game-icon:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-    .game-icon img {
+    .game-card img {
       width: 100%;
-      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+      display: block;
     }
-    .game-name {
-      margin-top: 10px;
+    .game-card-title {
+      background: #000;
+      color: #fff;
+      padding: 10px;
       font-weight: bold;
-      font-size: 1.2em;
-      color: #333;
+      font-size: 16px;
     }
   </style>
-
-  <!-- PASSWORD SCRIPT -->
   <script>
-    const password = prompt("Enter the password:");
-    if (password !== "Mustard?") {
-      alert("Incorrect password!");
-      window.location.href = "password.html"; // Redirect to a separate password page if wrong
+    // Password protection
+    window.onload = function() {
+      if(sessionStorage.getItem('authenticated') !== 'true') {
+        window.location.href = "password.html"; // redirect if not authenticated
+      }
+    }
+    function openGame(url) {
+      window.location.href = url;
     }
   </script>
 </head>
 <body>
+  <h1>Welcome to the Game Stash</h1>
 
-  <!-- Navbar -->
-  <nav>
-    <a href="index.html">🎮 Games</a>
-  </nav>
-
-  <h1>ZYNX Central🤫🧏☠💀</h1>
-
-  <div class="game-container">
-    <!-- Drift Boss -->
-    <div class="game-icon" onclick="location.href='driftboss.html'">
-      <img src="https://game-cdn.b3.fun/cdn-cgi/image/format=auto/drift-boss-538fa894-019a-4bb6-ba61-2c343374e3ea/portrait-c85or9.png" alt="Drift Boss" />
-      <div class="game-name">Drift Boss</div>
-    </div>
-
-    <!-- Serious -->
-    <div class="game-icon" onclick="location.href='Serious.html'">
-      <img src="https://cdn.blipzi.com/go/lf/golf-orbit-d.jpg?width=200&height=200&aspect_ratio=1:1" alt="Serious Game" />
-      <div class="game-name">Golf orbit (Work in progress)</div>
-    </div>
-
-    <!-- Steal A Brainrot -->
-    <div class="game-icon" onclick="location.href='Sab.html'">
-      <img src="https://play-lh.googleusercontent.com/iR1JNfTr0W_fDN8zAfuZYPYHdVjI1UzNSVFkbAyXwN8e3jEuKsyu73zqjVdHDxNEfQqLhC78EaPzZPtWNL-X" alt="Steal A Brainrot Logo" />
-      <div class="game-name">Steal A Brainrot</div>
-    </div>
-
-    <!-- Freddy -->
-    <div class="game-icon" onclick="location.href='freddy.html'">
-      <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Five_Nights_at_Freddy%27s_logo.png" alt="Five Nights at Freddy's Logo" />
-      <div class="game-name">Five Nights At Freddys</div>
-    </div>
-
-    <!-- Superhot -->
-    <div class="game-icon" onclick="location.href='Superhot.html'">
-      <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg" alt="Superhot Logo" />
-      <div class="game-name">Superhot</div>
-    </div>
-
-    <!-- Retro Bowl -->
-    <div class="game-icon" onclick="location.href='retro.html'">
-      <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl Logo" />
-      <div class="game-name">Retro Bowl</div>
-    </div>
-
-    <!-- Real Flight Sim -->
-    <div class="game-icon" onclick="location.href='aeroplane.html'">
-      <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Simulator Logo" />
-      <div class="game-name">Real Flight Sim</div>
-    </div>
+  <!-- FNAF game card -->
+  <div class="game-card" onclick="openGame('freddy.html')">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgH..." alt="Five Nights At Freddy's">
+    <div class="game-card-title">Five Nights At Freddy's</div>
   </div>
 
+  <!-- Superhot -->
+  <div class="game-card" onclick="openGame('superhot.html')">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzk1NjM5MjktN2YzMC00YzcyLWFjNTEtM2IzNDE3NmIxZGQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Superhot">
+    <div class="game-card-title">Superhot</div>
+  </div>
+
+  <!-- Retro Bowl -->
+  <div class="game-card" onclick="openGame('retro.html')">
+    <img src="https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" alt="Retro Bowl">
+    <div class="game-card-title">Retro Bowl</div>
+  </div>
+
+  <!-- Real Flight Sim -->
+  <div class="game-card" onclick="openGame('aeroplane.html')">
+    <img src="https://www.rortos.com/wp-content/uploads/2020/01/RFS_512-300x300.png" alt="Real Flight Sim">
+    <div class="game-card-title">Real Flight Sim</div>
+  </div>
 </body>
 </html>
