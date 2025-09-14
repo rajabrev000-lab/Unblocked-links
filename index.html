@@ -1,49 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZYNX Central</title>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
-<style>
-  body {
-    background-color: #FFFFFF; /* white background */
-    color: black; /* text color for body and headings */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 50px;
-  }
+  <meta charset="UTF-8" />
+  <title>ZYNX Central🤫🧏☠💀</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 0;
+      margin: 0;
+    }
 
-  h1 {
-    color: black; /* ensure title is visible */
-  }
+    /* Navbar */
+    nav {
+      background-color: #333;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      margin: 0 15px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
 
-  a {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    width: 200px;
-    background-color: #00aaff;
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-    font-size: 20px;
-  }
+    h1 {
+      margin-top: 30px;
+    }
 
-  a:hover {
-    background-color: #ffcc00;
-    color: black;
-  }
-</style>
+    /* Game Grid */
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 40px;
+    }
+    .game-icon {
+      cursor: pointer;
+      border: 2px solid #333;
+      border-radius: 12px;
+      padding: 10px;
+      width: 220px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: white;
+    }
+    .game-icon:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .game-icon img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .game-name {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
 
-<h1>ZYNX Central</h1>
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">🎮 Games</a>
+  </nav>
 
-<a href="driftboss.html">DriftBoss</a>
-<a href="Serious.html">Golf orbit</a>
-<a href="Sab.html">Steal a brainrot</a>
+  <h1>ZYNX Central🤫🧏☠💀</h1>
+
+  <div class="game-container">
+    <!-- Drift Boss -->
+    <div class="game-icon" onclick="location.href='driftboss.html'">
+      <img src="https://game-cdn.b3.fun/cdn-cgi/image/format=auto/drift-boss-538fa894-019a-4bb6-ba61-2c343374e3ea/portrait-c85or9.png" alt="Drift Boss" />
+      <div class="game-name">Drift Boss</div>
+    </div>
+
+    <!-- Serious -->
+    <div class="game-icon" onclick="location.href='Serious.html'">
+      <img src="https://cdn.blipzi.com/go/lf/golf-orbit-d.jpg?width=200&height=200&aspect_ratio=1:1" alt="Serious Game" />
+      <div class="game-name">Serious</div>
+    </div>
+
+    <!-- Steal A Brainrot -->
+    <div class="game-icon" onclick="location.href='Sab.html'">
+      <img src="data:image/jpeg;base64,PUT-YOUR-LONG-BASE64-CODE-HERE" alt="Steal A Brainrot Logo" />
+      <div class="game-name">Steal A Brainrot</div>
+    </div>
+  </div>
 
 </body>
 </html>
